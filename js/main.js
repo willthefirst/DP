@@ -15,10 +15,10 @@ var TrackConfig = {
 		catch(e) {
             alert('Web Audio API is not supported in this browser');
 		}
-	}
+	},
 
     loadTrack: function() {
-        $.ajax(url, settings, settings)
+        $.ajax(url, settings, settings);
     }
 };
 

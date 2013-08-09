@@ -5,11 +5,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+          compress: true
       },
       build: {
-        src: 'js/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+          src: [
+              "js/main.js"
+          ],
+          dest: 'build/giflife.min.js'
       }
     }
   });
