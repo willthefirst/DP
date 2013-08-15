@@ -29,6 +29,7 @@ var TrackConfig = {
             request.onload = function() {
               TrackConfig.context.decodeAudioData(request.response, function(buffer) {
                 TrackConfig.buffer = buffer;
+                console.log(TrackConfig.buffer);
                 TrackConfig.playTrack();
               });
             };
@@ -43,7 +44,7 @@ var TrackConfig = {
         this.source = this.context.createBufferSource();
         this.source.buffer = this.buffer;
         this.source.connect(this.context.destination);
-        this.source.start(0);
+        this.source.start();
         // this.startMetronome();
 
     },
