@@ -17,4 +17,8 @@ $container-height: 720px;
 	margin-left: -$container-width/2;
 	top: 50%;
 	margin-top: -$container-height/2;
+
+	&.red {
+		background-color: red;
+	}
 }

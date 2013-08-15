@@ -44,8 +44,8 @@ var TrackConfig = {
         this.source = this.context.createBufferSource();
         this.source.buffer = this.buffer;
         this.source.connect(this.context.destination);
-        this.source.start();
-        // this.startMetronome();
+        this.source.start(0);
+        this.startMetronome();
 
     },
 
@@ -55,7 +55,7 @@ var TrackConfig = {
 
     controls: function() {
         var playing = false;
-        $('#track-toggle').click(function() {
+        $('.container').click(function() {
             if (playing) {
                 TrackConfig.stopTrack();
                 playing = false;
@@ -71,10 +71,7 @@ var TrackConfig = {
         var container = $('.container');
         var width = 100;
         var interval = window.setInterval(function() {
-            width = width + 50;
-            container.css({
-                width: width
-            });
+            container.toggleClass('red');
         }, 512.82051);
     }
 };

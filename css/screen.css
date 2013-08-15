@@ -176,3 +176,9 @@ summary {
   top: 50%;
   margin-top: -360px;
 }
+
+/* line 21, ../scss/screen.scss */
+
+.container.red {
+  background-color: red;
+}
