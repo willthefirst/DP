@@ -73,21 +73,24 @@ var TrackConfig = {
         var current_beat = 0;
         // Quarter note interval = 117 BPM -- 512.82051 ms per quarter note
         var interval = window.setInterval(function() {
-            current_beat =  'beat_' + TrackConfig.beat_count + '()';
-            TrackConfig.beatQueue.current_beat;
+            current_beat =  'beat_' + TrackConfig.beat_count;
+            window["TrackConfig"]["beatQueue"][current_beat]();
             TrackConfig.beat_count++;
         }, 512.82051);
     },
 
     beatQueue: {
 
+        beat_0 : function() {
+            console.log('beat 0');
+        },
+
         beat_1 : function() {
-            alert('success');
-            container.toggleClass('red');
+            console.log('beat 1');
         },
 
         beat_2: function() {
-
+            console.log('beat 2');
         }
     }
 };
