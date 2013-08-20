@@ -1,6 +1,5 @@
 var TrackConfig = {
 
-    // Quarter note interval = 117 BPM -- 512.82051 ms per quarter note
     init: function() {
         this.createAudioContext();
         this.controls();
@@ -13,6 +12,7 @@ var TrackConfig = {
     context: {},
     buffer: {},
     source: {},
+    beat_count: 0,
 
     createAudioContext: function() {
         try {
@@ -70,9 +70,25 @@ var TrackConfig = {
     startMetronome: function() {
         var container = $('.container');
         var width = 100;
+        var current_beat = 0;
+        // Quarter note interval = 117 BPM -- 512.82051 ms per quarter note
         var interval = window.setInterval(function() {
-            container.toggleClass('red');
+            current_beat =  'beat_' + TrackConfig.beat_count + '()';
+            TrackConfig.beatQueue.current_beat;
+            TrackConfig.beat_count++;
         }, 512.82051);
+    },
+
+    beatQueue: {
+
+        beat_1 : function() {
+            alert('success');
+            container.toggleClass('red');
+        },
+
+        beat_2: function() {
+
+        }
     }
 };
 
