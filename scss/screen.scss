@@ -5,20 +5,44 @@
 
 @import "compass/reset";
 
+// Config variables
+$video-width: 160px;
+$video-height: 120px;
 $container-width: 940px;
-$container-height: 720px;
+$container-height: $video-height*5; //calculated height given div's inside
+$page-margin: 20px;
 
+body {
+	height: 100%;
+	display: block;
+	background-color: #000;
+}
 .container {
 	width: $container-width;
-	height: $container-height;
-	background-color: #000;
+	// height: $container-height;
+	margin: auto;
+	text-align: center;
+	font-size: 0;
 	position: absolute;
-	left: 50%;
-	margin-left: -$container-width/2;
 	top: 50%;
 	margin-top: -$container-height/2;
+	left: 50%;
+	margin-left: -$container-width/2
+}
 
-	&.red {
-		background-color: red;
-	}
+.vid-frame {
+	background-color: green;
+	width: $video-width;
+	height: $video-height;
+	display: inline-block;
+	font-size: 0;
+	border: 1px solid gold;
+	box-sizing: border-box;
+}
+
+.user-vid {
+	@extend .vid-frame;
+	position: fixed;
+	top: $page-margin;
+	left: $page-margin;
 }
