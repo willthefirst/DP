@@ -29,9 +29,13 @@ body {
 	left: 50%;
 	margin-left: -$container-width/2
 }
-
+.user-vid {
+	@extend .vid-frame;
+	position: fixed;
+	top: $page-margin;
+	left: $page-margin;
+}
 .vid-frame {
-	background-color: green;
 	width: $video-width;
 	height: $video-height;
 	display: inline-block;
@@ -40,9 +44,14 @@ body {
 	box-sizing: border-box;
 }
 
-.user-vid {
-	@extend .vid-frame;
-	position: fixed;
-	top: $page-margin;
-	left: $page-margin;
+#c1 .vid-frame {
+	background-color: green;
+}
+
+#c2 .vid-frame {
+	background-color: red;
+}
+
+#c3 .vid-frame {
+	background-color: purple ;
 }

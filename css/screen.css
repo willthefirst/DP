@@ -186,11 +186,18 @@ body {
   margin-left: -470px;
 }
 
-/* line 33, ../scss/screen.scss */
+/* line 32, ../scss/screen.scss */
+
+.user-vid {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+/* line 38, ../scss/screen.scss */
 
 .vid-frame,
 .user-vid {
-  background-color: green;
   width: 160px;
   height: 120px;
   display: inline-block;
@@ -200,10 +207,23 @@ body {
   box-sizing: border-box;
 }
 
-/* line 43, ../scss/screen.scss */
+/* line 47, ../scss/screen.scss */
 
-.user-vid {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+#c1 .vid-frame,
+#c1 .user-vid {
+  background-color: green;
+}
+
+/* line 51, ../scss/screen.scss */
+
+#c2 .vid-frame,
+#c2 .user-vid {
+  background-color: red;
+}
+
+/* line 55, ../scss/screen.scss */
+
+#c3 .vid-frame,
+#c3 .user-vid {
+  background-color: purple;
 }
