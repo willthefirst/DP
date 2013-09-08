@@ -67,29 +67,12 @@ body {
 	bottom: 0;
 	background-color: #555;
 }
-.container {
-	float: left;
-}
-
-.corner {
-	height: 50%;
-	outline: 1px solid white;
-}
-
-.ctnr-left {
-	background-color: green;
-}
-
-.ctnr-right {
-	background-color: red;
-}
 
 .vid {
 	width: 100%;
 }
 
 .vid-frame {
-	// width: 100%;
 	height: auto;
 	background-color: black;
 	position: relative;

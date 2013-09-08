@@ -240,38 +240,13 @@ body {
   background-color: #555;
 }
 
-/* line 70, ../scss/screen.scss */
-
-.container {
-  float: left;
-}
-
-/* line 74, ../scss/screen.scss */
-
-.corner {
-  height: 50%;
-  outline: 1px solid white;
-}
-
-/* line 79, ../scss/screen.scss */
-
-.ctnr-left {
-  background-color: green;
-}
-
-/* line 83, ../scss/screen.scss */
-
-.ctnr-right {
-  background-color: red;
-}
-
-/* line 87, ../scss/screen.scss */
+/* line 71, ../scss/screen.scss */
 
 .vid {
   width: 100%;
 }
 
-/* line 91, ../scss/screen.scss */
+/* line 75, ../scss/screen.scss */
 
 .vid-frame {
   height: auto;
@@ -279,7 +254,7 @@ body {
   position: relative;
 }
 
-/* line 98, ../scss/screen.scss */
+/* line 81, ../scss/screen.scss */
 
 .record-controls {
   position: absolute;
