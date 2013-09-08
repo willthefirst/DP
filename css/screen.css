@@ -164,66 +164,47 @@ summary {
   display: block;
 }
 
-/* line 15, ../scss/screen.scss */
+/* line 12, ../scss/screen.scss */
 
 body {
   height: 100%;
-  display: block;
   background-color: #000;
 }
 
-/* line 20, ../scss/screen.scss */
+/* line 17, ../scss/screen.scss */
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 25, ../scss/screen.scss */
 
 .container {
-  width: 940px;
-  margin: auto;
-  text-align: center;
-  font-size: 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -300px;
-  left: 50%;
-  margin-left: -470px;
+  width: 50%;
+  height: 100%;
+  float: left;
 }
 
-/* line 32, ../scss/screen.scss */
+/* line 31, ../scss/screen.scss */
 
-.user-vid {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-/* line 38, ../scss/screen.scss */
-
-.vid-frame,
-.user-vid {
-  width: 160px;
-  height: 120px;
-  display: inline-block;
-  font-size: 0;
-  border: 1px solid gold;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 47, ../scss/screen.scss */
-
-#c1 .vid-frame,
-#c1 .user-vid {
+.ctnr-left {
   background-color: green;
 }
 
-/* line 51, ../scss/screen.scss */
+/* line 35, ../scss/screen.scss */
 
-#c2 .vid-frame,
-#c2 .user-vid {
+.ctnr-right {
   background-color: red;
 }
 
-/* line 55, ../scss/screen.scss */
+/* line 39, ../scss/screen.scss */
 
-#c3 .vid-frame,
-#c3 .user-vid {
-  background-color: purple;
+.vid-frame {
+  width: 100%;
+  height: auto;
+  background-color: black;
 }

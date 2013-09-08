@@ -3,9 +3,8 @@ var TrackConfig = {
     mediaStream: {},
     recordRTC: {},
 
-    // Set the video length and general interval.
-    beats: 4,
-    bpm: 140,
+    // Song tempo in beats per minute
+    bpm: 133,
 
     init: function() {
         this.getRecordRTC();
@@ -36,7 +35,7 @@ var TrackConfig = {
         navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                                   navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
-        var video = document.querySelector('video');
+        var video = document.querySelector('.usr-dance');
 
         if (navigator.getUserMedia) {
           navigator.getUserMedia({video: true}, function(stream) {
@@ -56,14 +55,7 @@ var TrackConfig = {
 
             TrackConfig.recordRTC = RecordRTC(stream, options);
 
-            $('#play').on('click', function() {
-            });
-            $('#stop').on('click', function() {
-                TrackConfig.recordRTC.stopRecording(function(videoURL) {
-                    window.open(videoURL);
-                });
-            });
-            TrackConfig.autoRecord($('#record-auto'), 4, 140);
+            TrackConfig.autoRecord($('#record-auto'), 28, TrackConfig.bpm);
 
           }, onDeny);
         }

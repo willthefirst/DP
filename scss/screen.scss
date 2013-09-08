@@ -6,52 +6,38 @@
 @import "compass/reset";
 
 // Config variables
-$video-width: 160px;
-$video-height: 120px;
-$container-width: 940px;
-$container-height: $video-height*5; //calculated height given div's inside
-$page-margin: 20px;
+$vid-width: 320px;
+$vid-height: 240px;
 
 body {
 	height: 100%;
-	display: block;
 	background-color: #000;
 }
-.container {
-	width: $container-width;
-	// height: $container-height;
-	margin: auto;
-	text-align: center;
-	font-size: 0;
+
+.wrapper {
 	position: absolute;
-	top: 50%;
-	margin-top: -$container-height/2;
-	left: 50%;
-	margin-left: -$container-width/2
-}
-.user-vid {
-	@extend .vid-frame;
-	position: fixed;
-	top: $page-margin;
-	left: $page-margin;
-}
-.vid-frame {
-	width: $video-width;
-	height: $video-height;
-	display: inline-block;
-	font-size: 0;
-	border: 1px solid gold;
-	box-sizing: border-box;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
-#c1 .vid-frame {
+.container {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.ctnr-left {
 	background-color: green;
 }
 
-#c2 .vid-frame {
+.ctnr-right {
 	background-color: red;
 }
 
-#c3 .vid-frame {
-	background-color: purple ;
+.vid-frame {
+	width: 100%;
+	height: auto;
+	background-color: black;
 }
