@@ -46,6 +46,12 @@ var TrackConfig = {
     },
 
     controls: function() {
+
+        // This seems relevant for refactoring:
+
+        // http://stackoverflow.com/questions/7925011/jquery-get-elements-attribute-loop
+
+
         $('.beat-4').on('click', function() {
             TrackConfig.autoRecord( 4, TrackConfig.bpm);
         });
@@ -61,7 +67,9 @@ var TrackConfig = {
         TrackConfig.recordRTC.startRecording();
         var autostop = setTimeout( function() {
             TrackConfig.recordRTC.stopRecording(function(videoURL) {
-                window.open(videoURL);
+                $('.usr-dance').attr('src', videoURL);
+
+                console.log($('.usr-dance').attr('src'));
             });
         }, TrackConfig.getInterval(beats, bpm));
     },
