@@ -3,13 +3,24 @@ var TrackConfig = {
     mediaStream: {},
     recordRTC: {},
 
+    // Set the video length and general interval.
+    beats: 4,
+    bpm: 140,
+    interval: 0,
+
     init: function() {
+        this.getInterval();
         this.getRecordRTC();
+    },
+
+    // Return video length in seconds
+    getInterval: function() {
+        this.interval = (this.beats * 60 / this.bpm)*1000;
     },
 
     getRecordRTC: function() {
         $.getScript('https://www.webrtc-experiment.com/RecordRTC.js', function() {
-            TrackConfig.requestVidCam();
+            TrackConfig.setUpCam();
         });
     },
 
@@ -18,9 +29,9 @@ var TrackConfig = {
                 navigator.mozGetUserMedia || navigator.msGetUserMedia);
     },
 
-    requestVidCam: function() {
-        var onFailSoHard = function(e) {
-           console.log('Denied!', e);
+    setUpCam: function() {
+        var onDeny = function(e) {
+           alert("Without a webcam, this site won't do much for you :(");
         };
 
         window.URL = window.URL || window.webkitURL;
@@ -36,27 +47,35 @@ var TrackConfig = {
             var options = {
                 type: 'video',
                 video: {
-                    width: 160,
-                    height: 120
+                    width: 320,
+                    height: 240
                 },
                 canvas: {
-                    width: 160,
-                    height: 120
+                    width: 320,
+                    height: 240
                 }
             };
 
             TrackConfig.recordRTC = RecordRTC(stream, options);
 
             $('#play').on('click', function() {
-                TrackConfig.recordRTC.startRecording();
             });
             $('#stop').on('click', function() {
                 TrackConfig.recordRTC.stopRecording(function(videoURL) {
                     window.open(videoURL);
                 });
             });
+            $('#record-auto').on('click', function() {
+                console.log(TrackConfig.interval);
+                TrackConfig.recordRTC.startRecording();
+                var autostop = setTimeout( function() {
+                    TrackConfig.recordRTC.stopRecording(function(videoURL) {
+                        window.open(videoURL);
+                    });
+                }, TrackConfig.interval);
+            });
 
-          }, onFailSoHard);
+          }, onDeny);
         }
     }
 };
