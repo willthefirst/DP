@@ -6,16 +6,14 @@ var TrackConfig = {
     // Set the video length and general interval.
     beats: 4,
     bpm: 140,
-    interval: 0,
 
     init: function() {
-        this.getInterval();
         this.getRecordRTC();
     },
 
     // Return video length in seconds
-    getInterval: function() {
-        this.interval = (this.beats * 60 / this.bpm)*1000;
+    getInterval: function(beats, bpm) {
+        return ((beats * 60 / bpm)*1000);
     },
 
     getRecordRTC: function() {
@@ -65,18 +63,21 @@ var TrackConfig = {
                     window.open(videoURL);
                 });
             });
-            $('#record-auto').on('click', function() {
-                console.log(TrackConfig.interval);
-                TrackConfig.recordRTC.startRecording();
-                var autostop = setTimeout( function() {
-                    TrackConfig.recordRTC.stopRecording(function(videoURL) {
-                        window.open(videoURL);
-                    });
-                }, TrackConfig.interval);
-            });
+            TrackConfig.autoRecord($('#record-auto'), 4, 140);
 
           }, onDeny);
         }
+    },
+
+    autoRecord: function( selector, beats, bpm ) {
+        selector.on('click', function() {
+            TrackConfig.recordRTC.startRecording();
+            var autostop = setTimeout( function() {
+                TrackConfig.recordRTC.stopRecording(function(videoURL) {
+                    window.open(videoURL);
+                });
+            }, TrackConfig.getInterval(beats, bpm));
+        });
     }
 };
 
