@@ -164,14 +164,14 @@ summary {
   display: block;
 }
 
-/* line 12, ../scss/screen.scss */
+/* line 14, ../scss/screen.scss */
 
 body {
   height: 100%;
   background-color: #000;
 }
 
-/* line 17, ../scss/screen.scss */
+/* line 19, ../scss/screen.scss */
 
 .wrapper {
   position: absolute;
@@ -179,32 +179,109 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 940px;
 }
 
-/* line 25, ../scss/screen.scss */
+/* line 28, ../scss/screen.scss */
+
+.vid-box {
+  width: 100%;
+  padding-bottom: 75%;
+  background-color: blue;
+  position: relative;
+}
+
+/* line 35, ../scss/screen.scss */
+
+.corner-1,
+.corner-2,
+.corner-3,
+.corner-4 {
+  position: absolute;
+}
+
+/* line 38, ../scss/screen.scss */
+
+.corner-1 {
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 50%;
+  background-color: #222;
+}
+
+/* line 46, ../scss/screen.scss */
+
+.corner-2 {
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 50%;
+  background-color: #333;
+}
+
+/* line 54, ../scss/screen.scss */
+
+.corner-3 {
+  top: 50%;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  background-color: #444;
+}
+
+/* line 62, ../scss/screen.scss */
+
+.corner-4 {
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+}
+
+/* line 70, ../scss/screen.scss */
 
 .container {
-  width: 50%;
-  height: 100%;
   float: left;
 }
 
-/* line 31, ../scss/screen.scss */
+/* line 74, ../scss/screen.scss */
+
+.corner {
+  height: 50%;
+  outline: 1px solid white;
+}
+
+/* line 79, ../scss/screen.scss */
 
 .ctnr-left {
   background-color: green;
 }
 
-/* line 35, ../scss/screen.scss */
+/* line 83, ../scss/screen.scss */
 
 .ctnr-right {
   background-color: red;
 }
 
-/* line 39, ../scss/screen.scss */
+/* line 87, ../scss/screen.scss */
+
+.vid {
+  width: 100%;
+}
+
+/* line 91, ../scss/screen.scss */
 
 .vid-frame {
-  width: 100%;
   height: auto;
   background-color: black;
+  position: relative;
+}
+
+/* line 98, ../scss/screen.scss */
+
+.record-controls {
+  position: absolute;
+  bottom: 3px;
 }

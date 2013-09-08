@@ -6,6 +6,8 @@
 @import "compass/reset";
 
 // Config variables
+
+// Width and height should maintain this ratio
 $vid-width: 320px;
 $vid-height: 240px;
 
@@ -20,12 +22,58 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	max-width: 940px;
 }
 
+.vid-box {
+	width: 100%;
+	padding-bottom: 75%;
+	background-color: blue;
+	position: relative;
+}
+
+%corner {
+	position: absolute;
+}
+.corner-1 {
+	@extend %corner;
+	top: 0;
+	left: 0;
+	right: 50%;
+	bottom: 50%;
+	background-color: #222;
+}
+.corner-2 {
+	@extend %corner;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 50%;
+	background-color: #333;
+}
+.corner-3 {
+	@extend %corner;
+	top: 50%;
+	left: 0;
+	right: 50%;
+	bottom: 0;
+	background-color: #444;
+}
+.corner-4 {
+	@extend %corner;
+	top: 50%;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	background-color: #555;
+}
 .container {
-	width: 50%;
-	height: 100%;
 	float: left;
+}
+
+.corner {
+	height: 50%;
+	outline: 1px solid white;
 }
 
 .ctnr-left {
@@ -36,8 +84,18 @@ body {
 	background-color: red;
 }
 
-.vid-frame {
+.vid {
 	width: 100%;
+}
+
+.vid-frame {
+	// width: 100%;
 	height: auto;
 	background-color: black;
+	position: relative;
+}
+
+.record-controls {
+	position: absolute;
+	bottom: 3px;
 }
